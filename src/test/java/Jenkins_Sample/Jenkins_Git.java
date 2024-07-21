@@ -4,16 +4,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Jenkins_Git {
 	WebDriver driver;
-
+@Test
 	public void test_Sample() {
 	WebDriverManager.chromedriver().setup();
 
 	driver=new ChromeDriver();
+	driver.get("https://login.salesforce.com/");
+
 	
 	WebElement username=driver.findElement(By.id("username"));
 	
@@ -26,6 +29,8 @@ public class Jenkins_Git {
 	WebElement login=driver.findElement(By.id("Login"));
 	
 	login.click();
+	
+	driver.close();
 	
 	}
 	
